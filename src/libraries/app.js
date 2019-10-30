@@ -1,1 +1,1 @@
-console.log('⚡ Powered by Landstorm Developer System')
+console.log('⚡ Powered by Landstorm Developer System');

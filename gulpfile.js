@@ -24,12 +24,12 @@ gulp.task('minify-css', () => {
 });
 
 gulp.task('js', () => {
-    return gulp.src('./src/libraries/*.js')
-      .pipe(concat('landstorm-script.js'))
-      .pipe(gulp.dest('./js/'))
+  return gulp.src('./src/libraries/*.js')
+    .pipe(concat('landstorm-script.js'))
+    .pipe(gulp.dest('./js/'))
 });
 
-gulp.task('minify-js', () => {
+gulp.task('js-min', () => {
   return gulp.src(['./js/*.js', '!./js/*.min.js'])
     .pipe(uglify())
     .pipe(extReplace('.min.js'))
