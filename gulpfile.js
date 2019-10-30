@@ -30,7 +30,7 @@ gulp.task('js', () => {
 });
 
 gulp.task('minify-js', () => {
-  return gulp.src('./js/*.js')
+  return gulp.src(['./js/*.js', '!./js/*.min.js'])
     .pipe(uglify())
     .pipe(extReplace('.min.js'))
     .pipe(gulp.dest('./js/'))

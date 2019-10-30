@@ -1,4 +1,3 @@
-console.log('⚡ Powered by Landstorm Developer System')
 !function (t, e) {
     "function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Blazy = e()
 }(this, function () {
