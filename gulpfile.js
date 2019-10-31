@@ -15,7 +15,7 @@ gulp.task('css', () => {
     .pipe(gulp.dest('./dist/'))
 });
 
-gulp.task('minify-css', () => {
+gulp.task('css-min', () => {
     return gulp.src(['./dist/*.css', '!./dist/*.min.css'])
       .pipe(cleanCSS())
       .pipe(extReplace('.min.css'))

@@ -10,9 +10,9 @@
 
 @font-face {
     font-family: 'origin';
-    src: url('./opensans-regular-webfont.woff2') format('woff2'),
-         url('./opensans-regular-webfont.woff') format('woff');
+    src: url('./origin.woff2') format('woff2'),
+         url('./origin.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
