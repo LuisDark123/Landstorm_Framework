@@ -1,0 +1,32 @@
+.layer-base {
+  z-index: 0; }
+
+.layer-surface {
+  z-index: 10; }
+
+.layer-1 {
+  z-index: 1; }
+
+.layer-2 {
+  z-index: 2; }
+
+.layer-3 {
+  z-index: 3; }
+
+.layer-4 {
+  z-index: 4; }
+
+.layer-5 {
+  z-index: 5; }
+
+.layer-6 {
+  z-index: 6; }
+
+.layer-7 {
+  z-index: 7; }
+
+.layer-8 {
+  z-index: 8; }
+
+.layer-9 {
+  z-index: 9; }

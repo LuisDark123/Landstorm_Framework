@@ -35,3 +35,10 @@ gulp.task('js-min', () => {
     .pipe(extReplace('.min.js'))
     .pipe(gulp.dest('./js/'))
 });
+
+gulp.task('sass', () => {
+  return gulp.src(['./src/sass/base/*.scss', './src/sass/browser/*.scss', './src/sass/library/*.scss'])
+    .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./src/css/'))
+});

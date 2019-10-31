@@ -1,0 +1,6 @@
+.img-fill {
+  width: 100%; }
+
+.img-cover {
+  -o-object-fit: cover;
+     object-fit: cover; }
