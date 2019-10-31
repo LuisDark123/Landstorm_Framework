@@ -10,30 +10,29 @@ const zip = require('gulp-zip');
 const extReplace = require('gulp-ext-replace');
 
 gulp.task('css', () => {
-  return gulp.src('./src/sass/core.scss')
-    .pipe(sass())
-    .pipe(concat('landstorm-stylesheet.css'))
-    .pipe(gulp.dest('./css/'))
+  return gulp.src('./src/css/*.css')
+    .pipe(concat('landstorm-cdn-stylesheet.css'))
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('minify-css', () => {
-    return gulp.src('./css/*.css')
+    return gulp.src(['./dist/*.css', '!./dist/*.min.css'])
       .pipe(cleanCSS())
       .pipe(extReplace('.min.css'))
-      .pipe(gulp.dest('./css/'))
+      .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('js', () => {
-  return gulp.src('./src/libraries/*.js')
-    .pipe(concat('landstorm-script.js'))
-    .pipe(gulp.dest('./js/'))
+  return gulp.src('./src/js/*.js')
+    .pipe(concat('landstorm-cdn-script.js'))
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('js-min', () => {
-  return gulp.src(['./js/*.js', '!./js/*.min.js'])
+  return gulp.src(['./dist/*.js', '!./dist/*.min.js'])
     .pipe(uglify())
     .pipe(extReplace('.min.js'))
-    .pipe(gulp.dest('./js/'))
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('sass', () => {
