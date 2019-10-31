@@ -1,0 +1,7 @@
+@import "../tokens/_vars.scss";
+@import "../tokens/_colors.scss";
+
+::selection {
+  color: $color_white;
+  background: $color_link;
+}

@@ -4,7 +4,10 @@
 //   / /   / / __ \/ //_/ ___/
 //  / /___/ / / / / ,< (__  ) 
 // /_____/_/_/ /_/_/|_/____/  
-                           
+	   
+@import "../tokens/_vars.scss";
+@import "../tokens/_colors.scss";
+
 a{
 	color: $color_link;
 	text-decoration: none;

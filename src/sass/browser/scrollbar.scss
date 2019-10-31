@@ -4,7 +4,9 @@
 //   \__ \/ ___/ ___/ __ \/ / / __ \/ __ `/ ___/
 //  ___/ / /__/ /  / /_/ / / / /_/ / /_/ / /    
 // /____/\___/_/   \____/_/_/_.___/\__,_/_/     
-                                             
+                        
+@import "../tokens/_vars.scss";
+@import "../tokens/_colors.scss";
 
 ::-webkit-scrollbar {
     width: 8px;
