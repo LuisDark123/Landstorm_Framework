@@ -39,8 +39,10 @@ gulp.task('css-clean', () => {
 });
 
 gulp.task('js', () => {
-  return gulp.src('./src/js/*.js')
+  return gulp.src(['./src/js/*.js'])
+    .pipe(sourcemaps.init())
     .pipe(concat('landstorm-cdn-script.js'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/'))
 });
 
