@@ -1,0 +1,35 @@
+{
+  "name": "landstorm_framework",
+  "version": "1.0.0",
+  "description": "Landstorm Official Framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisDark123/Landstorm_Framework.git"
+  },
+  "author": "Luis Falcon (@LuisDark123)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuisDark123/Landstorm_Framework/issues"
+  },
+  "homepage": "https://github.com/LuisDark123/Landstorm_Framework#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.1",
+    "node-sass": "^4.13.0"
+  }
+}

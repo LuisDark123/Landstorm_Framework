@@ -9,6 +9,7 @@ const clean = require('gulp-clean');
 const zip = require('gulp-zip');
 const extReplace = require('gulp-ext-replace');
 const sourcemaps = require('gulp-sourcemaps');
+const jsonData = require('./package.json');
 
 
 gulp.task('sass', () => {
@@ -19,18 +20,18 @@ gulp.task('sass', () => {
 });
 
 gulp.task('css', () => {
-  return gulp.src(['./src/css/*.css'])
+  return gulp.src('./src/css/*.css')
     .pipe(sourcemaps.init())
     .pipe(concat('landstorm-cdn-stylesheet.css'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest(`./v${jsonData.version}/`))
 });
 
 gulp.task('css-min', () => {
-    return gulp.src(['./dist/*.css', '!./dist/*.min.css'])
+  return gulp.src([`./v${jsonData.version}/*.css`, `!./v${jsonData.version}/*.min.css`])
       .pipe(cleanCSS())
       .pipe(extReplace('.min.css'))
-      .pipe(gulp.dest('./dist/'))
+      .pipe(gulp.dest(`./v${jsonData.version}/`))
 });
 
 gulp.task('css-clean', () => {
@@ -43,16 +44,21 @@ gulp.task('js', () => {
     .pipe(sourcemaps.init())
     .pipe(concat('landstorm-cdn-script.js'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest(`./v${jsonData.version}/`))
 });
 
 gulp.task('js-min', () => {
-  return gulp.src(['./dist/*.js', '!./dist/*.min.js'])
+  return gulp.src([`./v${jsonData.version}/*.js`, `!./v${jsonData.version}/*.min.js`])
     .pipe(uglify())
     .pipe(extReplace('.min.js'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest(`./v${jsonData.version}/`))
+});
+
+gulp.task('dist-clean', () => {
+  return gulp.src(`./v${jsonData.version}/*`, { read: false })
+    .pipe(clean());
 });
 
 gulp.task('css-build', gulp.series(['css-clean', 'sass', 'css', 'css-min']))
 gulp.task('js-build', gulp.series(['js', 'js-min']))
-gulp.task('build', gulp.series(['css-build', 'js-build']))
+gulp.task('build', gulp.series(['dist-clean', 'css-build', 'js-build']))
