@@ -3,42 +3,44 @@ Estructura actual del framework
 
 ```bash
 Landstorm_Framework/
-├── css/
-│   ├── landstorm-stylesheet.css
-│   ├── landstorm-stylesheet.min.css
-├── js/
-│   ├── landstorm-script.css
-│   ├── landstorm-script.min.js
+├── v1.0.0/
+│   ├── landstorm-cdn-stylesheet.css
+│   ├── landstorm-cdn-stylesheet.css.map
+│   ├── landstorm-cdn-stylesheet.min.css
+│   ├── landstorm-cdn-script.js
+│   ├── landstorm-cdn-script.js.map
+│   └── landstorm-cdn-script.min.js
 └── src/
-    ├── libraries/
+    ├── js/
+    │   ├── app.js
+    │   └── blazy.js
+    ├── css/
     │   ├── app.js
     │   └── blazy.js
     └── sass/
         ├── base/
-        │   ├── _body.scss
-        │   ├── _fonts.scss
-        │   ├── _images.scss
-        │   ├── _links.scss
-        │   ├── _paragraphs.scss
-        │   ├── _sections.scss
-        │   └── _titles.scss
+        │   ├── base-bodyTag.scss
+        │   ├── base-hTags.scss
+        │   ├── base-imgTags.scss
+        │   ├── base-linkTags.scss
+        │   ├── base-pTags.scss
+        │   └── base-sectionTags.scss
         ├── browser/
-        │   ├── _scrollbar.scss
-        │   └── _selection-text.scss
+        │   ├── browser-scrollbar.scss
+        │   └── browser-select.scss
         ├── library/
-        │   ├── _columns.scss
-        │   ├── _flexbox.scss
-        │   ├── _images.scss
-        │   ├── _margins.scss
-        │   ├── _paddings.scss
-        │   ├── _paragraphs.scss
-        │   ├── _querys.scss
-        │   ├── _sections.scss
-        │   ├── _shadows.scss
-        │   ├── _titles.scss
-        │   └── _z-index.scss
-        ├── tokens/
-        │   ├── _colors.scss
-        │   └── _vars.scss
-        └── core.scss
+        │   ├── lib-columns.scss
+        │   ├── lib-flexbox.scss
+        │   ├── lib-images.scss
+        │   ├── lib-layers.scss
+        │   ├── lib-margins.scss
+        │   ├── lib-paddings.scss
+        │   ├── lib-paragraphs.scss
+        │   ├── lib-querys.scss
+        │   ├── lib-sections.scss
+        │   ├── lib-shadows.scss
+        │   └── lib-titles.scss
+        └── tokens/
+            ├── _colors.scss
+            └── _vars.scss
 ``` 
