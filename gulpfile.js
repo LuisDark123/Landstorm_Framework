@@ -14,7 +14,7 @@ const sourcemaps = require('gulp-sourcemaps');
 gulp.task('sass', () => {
   return gulp.src(['./src/sass/base/*.scss', './src/sass/browser/*.scss', './src/sass/library/*.scss'])
     .pipe(sass())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest('./src/css/'))
 });
 
@@ -52,3 +52,7 @@ gulp.task('js-min', () => {
     .pipe(extReplace('.min.js'))
     .pipe(gulp.dest('./dist/'))
 });
+
+gulp.task('css-build', gulp.series(['css-clean', 'sass', 'css', 'css-min']))
+gulp.task('js-build', gulp.series(['js', 'js-min']))
+gulp.task('build', gulp.series(['css-build', 'js-build']))
